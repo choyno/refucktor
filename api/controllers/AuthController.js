@@ -8,21 +8,19 @@ module.exports = {
         rest: false
     },
 
-    login: function(req, res) {
-
-        passport.authenticate('local', function(err, user, info) {
-            if ((err) || (!user)) {
-                return res.send({
-                    message: info.message,
-                    user: user
-                });
-            }
-            req.logIn(user, function(err) {
-                if (err) res.send(err);
-		res.redirect('/dashboard');
-            });
-
-        })(req, res);
+    login: function(req, res, next) {
+      passport.authenticate('local',function(err, user, info){
+	if (err) { return next(err); }
+	if (!user) {
+	  req.flash('message','Invalid email of password.');
+	  return res.redirect('/login');
+	}
+	req.logIn(user, function(err) {
+	  if (err) { return next(err); }
+	  req.flash('message','Welcome!');
+	  return res.redirect('/dashboard');
+	});
+      })(req, res, next);
     },
 
     logout: function(req, res) {

@@ -36,17 +36,21 @@ module.exports.routes = {
     view: 'homepage'
   },
 
-  'get /login': 'UserController.login',
-
+  //Authentications
   'post /login': 'AuthController.login',
-
   '/logout': 'AuthController.logout',
 
-  'get /signup': {
-    view: 'users/signup'
-  },
-
+  //Users
+  'get /signup': 'UserController.signup',
+  'get /login': 'UserController.login',
   'get /dashboard': 'UserController.dashboard',
+
+  //Posts
+  'post /post': 'PostController.create',
+  'get /post/show/:id': 'PostController.show',
+
+  //Templates
+  'get template/:id': 'TemplateController.find'
 
 
   /***************************************************************************

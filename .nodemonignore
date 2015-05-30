@@ -1,3 +1,5 @@
+assets/templates/*
+assets/js/*
 views/*
 .tmp/*
 .git/*

@@ -12,6 +12,10 @@ module.exports = {
       type: 'string',
       minLength: 6,
       required: true
+    },
+    posts: {
+      collection: 'post',
+      via: 'user'
     }
   },
   beforeCreate: function(user, next){

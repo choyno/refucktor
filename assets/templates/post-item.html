@@ -1,0 +1,12 @@
+<h3>
+  <a ng-href="/post/show/{{post.id}}">
+    Votes: {{post.vote}}
+    Fave: {{post.favorites}}
+    Title: {{post.title}}
+    Body: {{post.body}}
+     Answers:
+       <ul>
+	 <li ng-repeat="answer in post.answers">hello</li>
+       </ul>
+  </a>
+</h3>
