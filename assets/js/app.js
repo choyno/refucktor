@@ -1,1 +1,1 @@
-var app = angular.module('Refucktor', ['ngMaterial', 'ngRoute']);
+var app = angular.module('Refucktor', ['ngMaterial', 'ngRoute', 'compareTo', 'ui.codemirror', 'angularMoment']);

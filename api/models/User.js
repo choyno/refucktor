@@ -16,6 +16,10 @@ module.exports = {
     posts: {
       collection: 'post',
       via: 'user'
+    },
+    favoritePosts: {
+      collection: 'post',
+      through: 'favorite'
     }
   },
   beforeCreate: function(user, next){

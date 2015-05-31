@@ -29,6 +29,25 @@ module.exports = {
 	if (err) res.send(err);
 	res.view('posts/show');
       });
+  },
+  vote: function(req, res){
+    var vote = req.param('vote');
+    var postId = req.param('id');
+
+    Post.findOne(postId).exec(function (err, post){
+      if (err) res.json(err);
+      if (vote == 'upvote') {
+	post.vote = post.vote + 1;
+      } else if (vote == 'downvote') {
+	post.vote = post.vote - 1;
+      }
+
+      post.save(function(err){
+	if (err) res.json(err);
+	res.json(post);
+      });
+
+    })
   }
 	
 };

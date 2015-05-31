@@ -3,6 +3,10 @@ app.controller('PostCtrl', ['$scope', '$http', function($scope, $http){
   $scope.posts = [];
   $scope.postId = "";
   $scope.load = false;
+  $scope.editorOptions = {
+    lineWrapping : true,
+    lineNumbers: true
+  };
 
   $scope.createPost = function(load){
     $scope.load = true;
@@ -29,7 +33,7 @@ app.controller('PostCtrl', ['$scope', '$http', function($scope, $http){
   }
 
   function getPosts(){
-    $http.get('/post?question=null')
+    $http({url: '/post', params: {question: "null", sort: "createdAt DESC"}})
       .success(function(data){
 	$scope.posts = data;
       })

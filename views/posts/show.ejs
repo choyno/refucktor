@@ -1,20 +1,44 @@
-<div ng-controller="PostCtrl" ng-init="postId='<%= req.param('id') %>'" >
+<div ng-controller="PostCtrl" ng-init="postId='<%= req.param('id') %>'"  class="container">
+
   <div id="question">
-    {{post.title}}
-    {{post.body}}
+    <h5 class="red-text accent-2">{{post.title}}</h5>
+    <p class="right-align">
+      Asked on <span am-time-ago="post.createdAt"></span>
+      <br />
+      <strong>- {{post.user.email}}</strong>
+    </p>
+    <p class="right-align"></p>
+    <ui-codemirror ui-codemirror-opts="editorOptions" ng-model="post.body"> </ui-codemirror>
   </div>
+
+  <h5>Answers</h5>
   <ul id="answers">
     <li ng-repeat="answer in post.answers">
-      {{answer.title}}
-      {{answer.body}}
+      <answer-item answer="answer"> </answer-item>
     </li>
   </ul>
+  <br />
+
+  Your Answer
   <div id="answer-form">
     <form ng-submit="createPost('load_post')">
-      <input ng-model="formData.title" type="text" name="title">
-      <textarea ng-model="formData.body" name="body"></textarea>
-      <input type='hidden' ng-model="formData.question" value="{{postId}}" ng-init="formData.question = postId">
-      <input type="submit" value="submit">
-    </form>
+	<div class="input-field">
+	  <input id="title" ng-model="formData.title" type="text" name="title">
+	  <label for="title">Title</label>
+	</div>
+
+	<div class="input-field">
+	  <ui-codemirror ui-codemirror-opts="editorOptions" ng-model="formData.body" name="body" required></ui-codemirror>
+	</div>
+
+	<input type='hidden' ng-model="formData.question" value="{{postId}}" ng-init="formData.question = postId">
+
+	<div class="input-field">
+	  <button class="btn waves-effect waves-light" type="submit">
+	    Submit
+	    <i class="mdi-content-send right"></i>
+	  </button>
+	</div>
+      </form>
   </div>
 </div>

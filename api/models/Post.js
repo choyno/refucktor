@@ -32,6 +32,10 @@ module.exports = {
     },
     user: {
       model: 'user'
+    },
+    favoriteUsers: {
+      collection: 'user',
+      through: 'favorite'
     }
 
   }

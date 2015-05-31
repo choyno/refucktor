@@ -48,9 +48,7 @@ module.exports.routes = {
   //Posts
   'post /post': 'PostController.create',
   'get /post/show/:id': 'PostController.show',
-
-  //Templates
-  'get template/:id': 'TemplateController.find'
+  'put /put/:id/vote': 'PostController.vote'
 
 
   /***************************************************************************

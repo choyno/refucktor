@@ -14,6 +14,8 @@
     "tests"
   ],
   "dependencies": {
-    "angular-ui-codemirror": "~0.3.0"
+    "angular-ui-codemirror": "~0.3.0",
+    "materialize": "~0.96.1",
+    "angular-moment": "~0.10.1"
   }
 }

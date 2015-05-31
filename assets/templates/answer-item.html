@@ -1,0 +1,22 @@
+<div class='answer-item'>
+  <div class="code-editor"> </div>
+  <div class='row'>
+    <div class='col s3'>
+      <button class="btn-floating waves-effect circle" ng-click="submitVote('upvote')">
+	<i class="small mdi-action-thumb-up">	</i>
+      </button>
+
+      <button class="btn-floating waves-effect circle" ng-click="submitVote('downvote')">
+	<i class="small mdi-action-thumb-down">	</i>
+      </button>
+      <span style="font-size:20px;">{{answer.vote}}</span>
+    </div>
+    <div class='col s9'>
+      <p class="right-align">
+      {{user.email}}
+      <br />
+	<span class="grey-text" am-time-ago="answer.createdAt"></span>
+      </p>
+    </div>
+  </div>
+</div>

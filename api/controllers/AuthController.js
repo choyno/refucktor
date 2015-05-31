@@ -12,7 +12,7 @@ module.exports = {
       passport.authenticate('local',function(err, user, info){
 	if (err) { return next(err); }
 	if (!user) {
-	  req.flash('message','Invalid email of password.');
+	  req.flash('message','Invalid email or password.');
 	  return res.redirect('/login');
 	}
 	req.logIn(user, function(err) {
