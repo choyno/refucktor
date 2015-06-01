@@ -66,9 +66,10 @@ module.exports.session = {
   //
 
   adapter: 'mongo',
-  host: "ds043002.mongolab.com",
-  port: "43002",
-  db: "heroku_app37389630",
+  host: process.env.MONGO_HOST,
+  port: process.env.MONGO_PORT,
+  db: process.env.MONGO_DB,
+  pass: process.env.MONGO_PASSWORD,
   collection: 'sessions'
 
 
