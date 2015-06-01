@@ -3,6 +3,7 @@
     <div id="code_smells" class='col s6'>
       <h4>Code Smells</h4>
 	<input ng-model='search.title' type="text" placeholder="Search">
+        <p class="grey-text center-align" ng-hide="posts.length">No code to refactor :(</p>
 	<ul class="collection">
 	  <li class="collection-item" ng-repeat="post in posts | filter:search:strict">
 	    <post-item post="post"> </post-item>
