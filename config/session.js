@@ -58,10 +58,15 @@ module.exports.session = {
   // pass: <redis auth password>,
   // prefix: 'sess:',
 
+  //adapter: 'mongo',
+  //host: 'localhost',
+  //port: 27017,
+  //db: 'sails',
+  //collection: 'sessions'
+  //
+
   adapter: 'mongo',
-  host: 'localhost',
-  port: 27017,
-  db: 'sails',
+  url: process.env.MONGOLAB_URI,
   collection: 'sessions'
 
 
