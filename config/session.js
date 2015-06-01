@@ -65,14 +65,6 @@ module.exports.session = {
   //collection: 'sessions'
   //
 
-  adapter: 'mongo',
-  host: process.env.MONGO_HOST,
-  port: process.env.MONGO_PORT,
-  db: process.env.MONGO_DB,
-  pass: process.env.MONGO_PASSWORD,
-  collection: 'sessions'
-
-
   /***************************************************************************
   *                                                                          *
   * Uncomment the following lines to use your Mongo adapter as a session     *
@@ -85,6 +77,14 @@ module.exports.session = {
   // port: 27017,
   // db: 'sails',
   // collection: 'sessions',
+  
+  adapter: 'mongo',
+  host: process.env.MONGO_HOST,
+  port: process.env.MONGO_PORT,
+  db: process.env.MONGO_DB,
+  password: process.env.MONGO_PASSWORD,
+  username: process.env.MONGO_DB,
+  collection: 'sessions'
 
   /***************************************************************************
   *                                                                          *
