@@ -21,7 +21,9 @@
 
 module.exports.connections = {
 
-
+  localDiskDb: {
+    adapter: 'sails-disk'
+  },
 
   someMongoDb: {
     adapter: 'sails-mongo',
