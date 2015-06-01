@@ -72,19 +72,21 @@ module.exports.session = {
   *                                                                          *
   ***************************************************************************/
 
-  // adapter: 'mongo',
-  // host: 'localhost',
-  // port: 27017,
-  // db: 'sails',
-  // collection: 'sessions',
-  
-  adapter: 'mongo',
-  host: process.env.MONGO_HOST,
-  port: process.env.MONGO_PORT,
-  db: process.env.MONGO_DB,
-  password: process.env.MONGO_PASSWORD,
-  username: process.env.MONGO_DB,
-  collection: 'sessions'
+   //Comment out to use in development
+   //adapter: 'mongo',
+   //host: 'localhost',
+   //port: 27017,
+   //db: 'sails',
+   //collection: 'sessions',
+
+  // Comment out to use in prod(heroku)
+  //adapter: 'mongo',
+  //host: process.env.MONGO_HOST,
+  //port: process.env.MONGO_PORT,
+  //db: process.env.MONGO_DB,
+  //password: process.env.MONGO_PASSWORD,
+  //username: process.env.MONGO_DB,
+  //collection: 'sessions'
 
   /***************************************************************************
   *                                                                          *
