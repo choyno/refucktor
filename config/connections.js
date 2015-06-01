@@ -25,7 +25,7 @@ module.exports.connections = {
 
   someMongoDb: {
     adapter: 'sails-mongo',
-    url: 'mongodb://heroku_app37389630:p1s5stpu8027d29l239tc4cdvn@ds043002.mongolab.com:43002/heroku_app37389630'
+    url: process.env.MONGOLAB_URI
   }
 
 };
