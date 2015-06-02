@@ -23,11 +23,6 @@
   <div id="answer-form">
     <form ng-submit="createPost('load_post')">
 	<div class="input-field">
-	  <input id="title" ng-model="formData.title" type="text" name="title">
-	  <label for="title">Title</label>
-	</div>
-
-	<div class="input-field">
 	  <ui-codemirror ui-codemirror-opts="editorOptions" ng-model="formData.body" name="body" required></ui-codemirror>
 	</div>
 

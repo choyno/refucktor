@@ -1,21 +1,36 @@
 <div ng-controller='PostCtrl'>
   <div class="row">
     <div id="code_smells" class='col s6'>
-      <h4>Code Smells</h4>
-	<input ng-model='search.title' type="text" placeholder="Search">
-	<ul class="collection">
-	  <li class="collection-item" ng-repeat="post in posts | filter:search:strict">
-	    <post-item post="post"> </post-item>
-	  </li>
-	</ul>
+      <h4>Code Smells
+
+      <div class="preloader-wrapper small active" ng-show="!!loading">
+	<div class="spinner-layer spinner-blue-only">
+	  <div class="circle-clipper left">
+	    <div class="circle"></div>
+	  </div><div class="gap-patch">
+	    <div class="circle"></div>
+	  </div><div class="circle-clipper right">
+	    <div class="circle"></div>
+	  </div>
+	</div>
+      </div>
+      </h4>
+      <input ng-model='search.title' type="text" placeholder="Search">
+      <ul class="collection">
+	<li class="collection-item" ng-repeat="post in posts | filter:search:strict">
+	  <post-item post="post"> </post-item>
+	</li>
+      </ul>
     </div>
 
     <div class='col s6'>
-      <h4>Account</h4>
-      <form ng-submit="createPost('load_posts')">
+      <h4>Post</h4>
+      <form name="postform" ng-submit="postform.$valid && createPost('load_posts')" novalidate>
 	<div class="input-field">
-	  <input id="title" ng-model="formData.title" type="text" name="title">
-	  <label for="title">Title</label>
+	  <input id="title" ng-model="formData.title" type="text" name="title" required> <label for="title">Title</label>
+	  <span class="help-block red-text text-lighten-3" ng-if="postform.title.$dirty">
+	    <p ng-show="postform.title.$error.required">Title is required.</p>
+	  </span>
 	</div>
 
 	<div class="input-field">
@@ -32,4 +47,3 @@
     </div>
   </div>
 </div>
-

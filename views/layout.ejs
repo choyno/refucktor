@@ -16,22 +16,39 @@
   </head>
 
   <body>
-
-    <nav>
-      <div class="nav-wrapper">
-	<a href="/" class="brand-logo">Refucktor</a>
-	<ul id="nav-mobile" class="right hide-on-med-and-down">
-	  <% if (!req.user) { %>
+    <header>
+      <nav id="nav-main">
+	<div class="nav-wrapper">
+	  <a href="/" class="brand-logo">Refucktor</a>
+	  <ul id="nav-mobile" class="right hide-on-med-and-down">
+	    <% if (!req.user) { %>
 	    <a href="/login">Login</a>
-	  <% } else { %>
+	    <% } else { %>
 	    <li><a href="/dashboard"><%- req.user.email %></a></li>
 	    <li><a href="/logout">Logout</a></li>
-	  <% } %>
-	</ul>
-      </div>
-    </nav>
+	    <% } %>
+	  </ul>
+	</div>
+      </nav>
+    </header>
 
-    <%- body %>
+    <main>
+      <%- body %>
+    </main>
+
+    <footer class="page-footer">
+      <div id="github-btns" class="container right-align">
+	<iframe src="https://ghbtns.com/github-btn.html?user=vinchi777&repo=refucktor&type=star&count=true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+	<iframe src="https://ghbtns.com/github-btn.html?user=vinchi777&repo=refucktor&type=watch&count=true&v=2" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+	<iframe src="https://ghbtns.com/github-btn.html?user=vinchi777&repo=refucktor&type=fork&count=true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+      </div>
+      <div class="footer-copyright">
+	<div class="container">
+	  © 2014-2015 Refucktor, All rights reserved.
+	</div>
+      </div>
+    </footer>
+
 
     <!--TEMPLATES-->
     <script type="text/javascript" src="/jst.js"></script>
@@ -61,4 +78,5 @@
     <script src="/js/signup/SignupController.js"></script>
     <!--SCRIPTS END-->
   </body>
+
 </html>
